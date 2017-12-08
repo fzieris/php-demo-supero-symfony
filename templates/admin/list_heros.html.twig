@@ -1,0 +1,31 @@
+{% extends "admin/admin-base.html.twig" %}
+
+{% import "admin/_buttons.html.twig" as button %}
+
+{% block body %}
+    <h3>Helden-Übersicht</h3>
+
+    {% for message in app.flashes('notice') %}
+        <div class="text-success bg-success" style="padding: 1em">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <p><a class="btn btn-primary" href="{{ path('admin-add-hero') }}"><i class="fas fa-plus"></i> Neuer Held</a></p>
+
+    <table class="table table-bordered">
+        {% for hero in heros %}
+            <tr>
+                <td>
+                    <p><strong>{{ hero.name }}</strong></p>
+                    {{ button.edit_hero(hero, 'btn-xs') }}
+                    {{ button.delete_hero(hero, 'btn-xs') }}
+                </td>
+                <td><img src='{{ asset( 'img/' ~ hero.name|lower ~ '.jpg') }}' alt='{{ hero.name }}' class='img-rounded'
+                         style='width: 200px; height: 200px'></td>
+                <td><strong>Status:</strong><br>
+                    {{ hero.status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

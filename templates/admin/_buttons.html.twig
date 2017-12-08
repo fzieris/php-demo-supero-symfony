@@ -1,0 +1,15 @@
+{% macro delete_hero(hero, css) %}
+    <a class="btn btn-danger {{ css }}"
+       href="{{ path('admin-delete-hero', { id : hero.id }) }}"
+       onclick="return confirm('Held {{ hero.name }} wirklich löschen?')">
+        <i class="fas fa-times"></i> Löschen
+    </a>
+{% endmacro %}
+
+{% macro edit_hero(hero, css) %}
+    <a class="btn btn-warning {{ css }}"
+       href="{{ path('admin-edit-hero', { id : hero.id }) }}"
+       title="Held {{ hero.name }} bearbeiten">
+        <i class="fas fa-edit"></i> Bearbeiten
+    </a>
+{% endmacro %}

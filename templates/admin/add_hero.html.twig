@@ -1,0 +1,14 @@
+{% extends "admin/admin-base.html.twig" %}
+
+{% block body %}
+    <h3>Neuen Held hinzufügen</h3>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-plus"></i>
+        Held anlegen
+    </button>
+    <a href="{{ path("admin-list-heros") }}" class="btn btn-default">Abbrechen</a>
+    {{ form_end(form) }}
+{% endblock %}

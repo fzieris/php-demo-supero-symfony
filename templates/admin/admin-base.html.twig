@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Supero - Admin
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>body { background-color: #ffe0cb; } td { background-color: white }</style>
+{% endblock %}
+
+{% block navi %}
+    <h3>Admin-Menü</h3>
+    <ul class="fa-ul">
+        <li>
+            <a href="{{ path('admin-list-heros') }}">
+                <span class="fa-li"><i class="fas fa-wrench"></i></span>
+                Heldenverwaltung
+            </a>
+        </li>
+    </ul>
+    <ul class="fa-ul">
+        <li>
+            <a href="{{ path('start') }}" class="text-muted">
+                <span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>
+                Öffentliche Seite
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <h1>Administration</h1>
+    {% block body %}{% endblock %}
+{% endblock %}
