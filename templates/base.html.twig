@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Supero{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bootstrap.min.css', 'bootstrap') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap-theme.min.css', 'bootstrap') }}">
+        <link rel="stylesheet" href="{{ asset('all.css', 'fontawesome') }}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+
+<nav class="col-sm-3">
+    {% block navi %}
+        <h3>Navigation</h3>
+        <ul class="fa-ul">
+            <li>
+                <a href="{{ path('start') }}">
+                    <span class="fa-li"><i class="fas fa-home"></i></span>
+                    Start
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('helden_liste') }}">
+                    <span class="fa-li"><i class="fas fa-users"></i></span>
+                    Heldenübersicht
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('buchen') }}">
+                    <span class="fa-li"><i class="fas fa-dollar-sign"></i></span>
+                    Buchungsanfrage
+                </a>
+            </li>
+        </ul>
+    {% endblock %}
+</nav>
+
+<main class="col-sm-9">
+    {% block content %}{% endblock %}
+</main>
+
+</div>
+</body>
 </html>

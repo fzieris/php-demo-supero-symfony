@@ -13,3 +13,10 @@ framework:
     #fragments: ~
     php_errors:
         log: true
+
+    assets:
+        packages:
+            bootstrap:
+                base_urls: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css"
+            fontawesome:
+                base_urls: "https://use.fontawesome.com/releases/v5.0.0/css"

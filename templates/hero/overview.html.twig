@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Helden
+{% endblock %}
+
+{% block content %}
+    <h1>Supero - Helden</h1>
+    <table class="table table-bordered">
+        {% for hero in heros %}
+            <tr>
+                <td><a href='{{ path('helden_details', { name : hero.name }) }}'>{{ hero.name }}</a></td>
+                <td><img src='{{ asset( 'img/' ~ hero.name|lower ~ '.jpg') }}' alt='{{ hero.name }}' class='img-rounded' style='width: 200px'></td>
+                <td class="{{ hero.status|bootstrap }}">
+                    <strong>{{ hero.status }}</strong>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <h1>Supero</h1>
+    <p class="lead text-primary">Willkomen bei Supero!</p>
+
+    <div class="row">
+        <div class="col-sm-6" style="margin-bottom: 0.5em">
+            <a href="{{ path('helden_liste') }}" class="bg-info text-center" style="display: block; padding: 1em; text-decoration: none">
+                <i class="fas fa-users fa-4x" style="margin-bottom: 0.2em"></i><br>
+                Werfen Sie einen Blick auf unsere Helden.
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="{{ path('buchen') }}" class="bg-info text-center" style="display: block; padding: 1em; text-decoration: none">
+                <i class="fas fa-dollar-sign fa-4x" style="margin-bottom: 0.2em"></i><br>
+                Stellen Sie eine Buchungsanfrage.
+            </a>
+        </div>
+    </div>
+{% endblock %}
