@@ -6,11 +6,12 @@
 
 {% block content %}
     <h1>Buchungs&shy;anfrage</h1>
-    <p class="lead">
-        Schicken Sie uns einfach eine E-Mail an
-        <a href="mailto:supero@example.org" class="btn btn-primary btn-sm">
-            <i class="far fa-envelope"></i> supero@example.org
-        </a>
-    </p>
-    <a href="{{ path('helden_liste') }}" class="btn btn-default">Zurück</a>
+    {{ form_start(contact_form) }}
+    {{ form_widget(contact_form) }}
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-envelope"></i>
+        Anfrage senden
+    </button>
+    <a href="{{ path('helden_liste') }}" class="btn btn-default pull-right">Abbrechen</a>
+    {{ form_end(contact_form) }}
 {% endblock %}

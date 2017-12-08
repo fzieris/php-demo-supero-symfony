@@ -38,6 +38,14 @@ class Hero {
         $this->text = $text ?? "Buchen Sie $name noch heute.";
     }
 
+    public function getNameStatus() {
+        return $this->getName() . ($this->getStatus() != Availability::AVAILABLE ? ' (' . $this->getStatus() . ')' : '');
+    }
+
+    public function isBookable() {
+        return $this->getStatus() != Availability::FULLY_BOOKED;
+    }
+
     public function getId() {
         return $this->id;
     }

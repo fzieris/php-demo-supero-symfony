@@ -1,0 +1,7 @@
+{% macro book_hero(hero, css) %}
+    {% if hero.bookable %}
+        <a href="{{ path('buchen', {name: hero.name}) }}" class="btn {{ css }}">Buchen</a>
+    {% else %}
+        <button type="button" class="btn {{ css }}" disabled>Buchen</button>
+    {% endif %}
+{% endmacro %}
