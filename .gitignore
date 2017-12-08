@@ -5,3 +5,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
